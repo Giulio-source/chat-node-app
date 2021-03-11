@@ -1,0 +1,43 @@
+.messaggio-other,
+.messaggio-self {
+  font-weight: 500;
+  font-size: 18px;
+  border-radius: 15px;
+  max-width: 300px;
+  padding: 15px;
+  margin: 10px;
+  position: relative;
+}
+
+.messaggio-other .author-name,
+.messaggio-self .author-name {
+  position: absolute;
+  top: 3px;
+  right: 12px;
+  font-size: 12px;
+  color: #9c9c9c;
+  font-style: italic;
+}
+
+.joined-message {
+  font-weight: 500;
+  font-size: 18px;
+  border-radius: 15px;
+  max-width: 300px;
+  margin: 10px;
+  position: relative;
+}
+
+.messaggio-other {
+  background: #c2f0ff;
+}
+
+.messaggio-self {
+  background: #fff5bf;
+  margin-left: auto;
+}
+
+.container.principale {
+  height: calc(100vh - 54px);
+  overflow: auto;
+}

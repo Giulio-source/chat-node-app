@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="/styles/styles.css" />
+    <title>Private Chat</title>
+    <script defer src="http://localhost:3000/socket.io/socket.io.js"></script>
+    <script defer src="/script.js"></script>
+  </head>
+
+  <body>
+    <div class="container">
+      <h1 class="my-3">Welcome</h1>
+      <div id="rooms-container">
+        <% Object.keys(rooms).forEach(room => {%>
+        <div class="card my-2" style="width: 18rem">
+          <div class="card-header"><%= room %></div>
+          <p class="list-group-item"><a href="<%= room %>">Join</a></p>
+        </div>
+        <% }) %>
+      </div>
+      <form action="/room" method="POST">
+        <div class="input-group mt-3">
+          <input type="text" name="room" id="room" required />
+          <div class="input-group-append">
+            <button class="btn btn-warning" type="submit">New Room</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
